@@ -22,6 +22,10 @@ header {
     border-bottom: 3px solid black;
 }
 
+header p {
+    cursor: pointer;
+}
+
 header .title {
     font-size: 22px;
 

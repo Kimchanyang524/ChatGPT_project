@@ -11,7 +11,7 @@
 <body>
     <header>
         <h1 class="title">LiveCHAT</h1>
-        <p class="menu">menu</p>
+        <p class="menu">초기화</p>
     </header>
     <main>
         <div class="container">
@@ -43,8 +43,48 @@
         </div>
     </main>
     <footer>
-        copyright
+        copyright 2023. All right reserved
     </footer>
 </body>
+<script>
+    const $textarea = document.querySelector('textarea');
+    const $button = document.querySelector('button');
+    const $answer = document.querySelector('.chatgpt');
+    const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+    const data = []
+    data.push({
+        "role": "system",
+        "content": "assistant는 운동 루틴을 추천해주는 트레이너입니다."
+    })
+
+    $button.addEventListener('click', e => {
+        e.preventDefault()
+        const contents = $textarea.value
+        data.push({
+            "role": "user",
+            "content": contents
+        })
+        $textarea.value = ''
+
+        chatGPTAPI()
+    })
+
+    function chatGPTAPI() {
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                // 답변 온 것을 assistant로 저장
+                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+            })
+    }
+</script>
 
 </html>
