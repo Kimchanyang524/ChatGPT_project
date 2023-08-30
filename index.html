@@ -11,14 +11,14 @@
 <body>
     <header>
         <h1 class="title">LiveCHAT</h1>
-        <p class="menu">초기화</p>
+        <p class="reset">초기화</p>
     </header>
     <main>
         <div class="container">
             <div class="chat_view">
             </div>
             <div>
-                <form class="chating"><textarea name="chat" cols="30" rows="10">채팅창입니다</textarea>
+                <form class="chating"><textarea name="chat" cols="30" rows="10"></textarea>
                     <button type="submit">입력</button>
                 </form>
             </div>
@@ -29,20 +29,39 @@
     </footer>
 </body>
 <script>
-    const $chat_view = document.querySelector('chat_view');
+    const $chat_view = document.querySelector('.chat_view');
     const $textarea = document.querySelector('textarea');
     const $button = document.querySelector('button');
-    const $chatgpt = document.querySelector('.chatgpt');
+    const $reset = document.querySelector('.reset');
     const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
     const data = [];
 
-    function printChat() {
+    $reset.addEventListener('click', function reset() {
+        window.localStorage.clear();
+        printChat();
+    });
+
+    function printuser() {
         const local = window.localStorage;
-        $chat_view.innerHTML = `<div>${local.getItem()}</div>`
-        // chatGPT = $chat_view.appendChild('div');
-        // chatGPT.value = '';
+        const $user = document.createElement('div');
+        $user.className = 'user';
+        $user.innerHTML = local.getItem('user');
+        if (local.getItem('chatgpt') != '') {
+            $chat_view.appendChild($user);
+        }
     }
-    printChat();
+    printuser();
+
+    function printgpt() {
+        const local = window.localStorage;
+        const $chatgpt = document.createElement('div');
+        $chatgpt.className = 'chatgpt';
+        $chatgpt.innerHTML = local.getItem('chatgpt');
+        if (local.getItem('chatgpt') != '') {
+            $chat_view.appendChild($chatgpt);
+        }
+    }
+    printgpt();
 
     data.push({
         "role": "system",
@@ -58,8 +77,8 @@
         })
         window.localStorage.setItem('user', $textarea.value);
         $textarea.value = ''
-
-        chatGPTAPI()
+        printuser();
+        chatGPTAPI();
     })
 
     function chatGPTAPI() {
@@ -77,6 +96,7 @@
                 // 답변 온 것을 assistant로 저장
                 // $chatgpt.innerHTML = `<p>${res.choices[0].message.content}</p>`
                 window.localStorage.setItem('chatgpt', res.choices[0].message.content);
+                printgpt();
             })
     }
 </script>
