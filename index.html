@@ -35,33 +35,49 @@
     const $reset = document.querySelector('.reset');
     const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
     const data = [];
+    let key = 0;
 
     $reset.addEventListener('click', function reset() {
         window.localStorage.clear();
-        printChat();
+        $chat_view.innerHTML = '';
+        key = 0;
     });
 
-    function printuser() {
+    function printuser($key) {
         const local = window.localStorage;
         const $user = document.createElement('div');
         $user.className = 'user';
-        $user.innerHTML = local.getItem('user');
+        $user.innerHTML = local.getItem('user' + $key);
         if (local.getItem('chatgpt') != '') {
             $chat_view.appendChild($user);
         }
     }
-    printuser();
 
-    function printgpt() {
+    function printgpt($key) {
         const local = window.localStorage;
         const $chatgpt = document.createElement('div');
         $chatgpt.className = 'chatgpt';
-        $chatgpt.innerHTML = local.getItem('chatgpt');
+        $chatgpt.innerHTML = local.getItem('chatgpt' + $key);
         if (local.getItem('chatgpt') != '') {
             $chat_view.appendChild($chatgpt);
         }
     }
-    printgpt();
+
+    function printAll(params) {
+        let i = 0;
+        while (i <= 100) {
+            if (window.localStorage.getItem('user' + i) == null) {
+                break;
+            } else {
+                console.log(i);
+                console.log(window.localStorage.getItem('user' + i));
+            }
+            printuser(i);
+            i++;
+            printgpt(i);
+        }
+    }
+    printAll();
 
     data.push({
         "role": "system",
@@ -75,10 +91,11 @@
             "role": "user",
             "content": contents
         })
-        window.localStorage.setItem('user', $textarea.value);
-        $textarea.value = ''
-        printuser();
+        window.localStorage.setItem('user' + key, $textarea.value);
+        $textarea.value = '';
+        printuser(key);
         chatGPTAPI();
+        key++;
     })
 
     function chatGPTAPI() {
@@ -93,10 +110,11 @@
             .then(res => res.json())
             .then(res => {
                 console.log(res)
-                // 답변 온 것을 assistant로 저장
-                // $chatgpt.innerHTML = `<p>${res.choices[0].message.content}</p>`
-                window.localStorage.setItem('chatgpt', res.choices[0].message.content);
-                printgpt();
+                let answer = res.choices[0].message.content + '';
+                answer.replace('\n', '<br>');
+                answer.replace('1.', '<br>1.');
+                window.localStorage.setItem('chatgpt' + key, answer);
+                printgpt(key);
             })
     }
 </script>
