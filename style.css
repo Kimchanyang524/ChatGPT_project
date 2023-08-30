@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    top: 0px;
+    height: 60px;
+    line-height: 60px;
+    background-color: lightblue;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    justify-self: flex-start;
+    border-bottom: 3px solid black;
+}
+
+header .title {
+    font-size: 22px;
+
+}
+
+footer {
+    bottom: 0px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: blue;
+    text-align: center;
+    justify-self: flex-end;
+    color: white;
+}
+
+main {
+    flex-grow: 1;
+    background-color: aqua;
+    bottom: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 79vh;
+    padding: 20px;
+}
+
+.chat_view {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.chatgpt,
+.user {
+    border: 2px solid blue;
+    padding: 10px;
+    border-radius: 16px;
+    max-width: 400px;
+    width: fit-content;
+    margin: 20px;
+}
+
+.chatgpt {
+    border-top-left-radius: 0;
+}
+
+.user {
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.container .chating {
+    height: 100px;
+    justify-content: flex-end;
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-self: flex-end;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.container .chating textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 0;
+    resize: none;
+    border-radius: 6px;
+    background-color: inherit;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.chating button {
+    height: 40px;
+    width: 100px;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.chating button:hover {
+    background-color: gray;
+}
