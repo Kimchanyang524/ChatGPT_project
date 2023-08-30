@@ -16,24 +16,6 @@
     <main>
         <div class="container">
             <div class="chat_view">
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">챗 GPT 채팅입니다.</div>
-                <div class="user">유저 채팅입니다.</div>
-                <div class="chatgpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quas, nam dicta,
-                    itaque placeat dolorum dignissimos quis porro tempora excepturi doloremque nesciunt enim quam
-                    pariatur amet aspernatur eum, iste eveniet?</div>
-                <div class="user">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod maxime in laboriosam
-                    ullam eos minima porro tempora, expedita commodi ab autem temporibus maiores. Quia, similique
-                    inventore? Ullam quos beatae perspiciatis.</div>
             </div>
             <div>
                 <form class="chating"><textarea name="chat" cols="30" rows="10">채팅창입니다</textarea>
@@ -47,11 +29,21 @@
     </footer>
 </body>
 <script>
+    const $chat_view = document.querySelector('chat_view');
     const $textarea = document.querySelector('textarea');
     const $button = document.querySelector('button');
-    const $answer = document.querySelector('.chatgpt');
+    const $chatgpt = document.querySelector('.chatgpt');
     const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
-    const data = []
+    const data = [];
+
+    function printChat() {
+        const local = window.localStorage;
+        $chat_view.innerHTML = `<div>${local.getItem()}</div>`
+        // chatGPT = $chat_view.appendChild('div');
+        // chatGPT.value = '';
+    }
+    printChat();
+
     data.push({
         "role": "system",
         "content": "assistant는 운동 루틴을 추천해주는 트레이너입니다."
@@ -64,6 +56,7 @@
             "role": "user",
             "content": contents
         })
+        window.localStorage.setItem('user', $textarea.value);
         $textarea.value = ''
 
         chatGPTAPI()
@@ -82,7 +75,8 @@
             .then(res => {
                 console.log(res)
                 // 답변 온 것을 assistant로 저장
-                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+                // $chatgpt.innerHTML = `<p>${res.choices[0].message.content}</p>`
+                window.localStorage.setItem('chatgpt', res.choices[0].message.content);
             })
     }
 </script>
