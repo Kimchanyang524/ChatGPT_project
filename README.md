@@ -5,4 +5,5 @@
 </ul>
 
 
-![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/927743a1-7831-4dde-a905-01f054bdbfb8)
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/9661a735-ee52-45db-8f1c-e652305e1a47)
+
