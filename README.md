@@ -28,7 +28,7 @@
         ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e)
       </li>
       <li>
-        <ol>
+        <ul>
           <li>
             1일차
             <ul>기능 설계</ul>
@@ -63,9 +63,14 @@
             7일차
             <ul>마무리 및 기능 추가</ul>
           </li>
-        </ol>
+        </ul>
       </li>
     </ul>
+  </li>
+  <li>
+    프로젝트 이미지
+    ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd)
+
   </li>
 </ol>
 
