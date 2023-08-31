@@ -3,7 +3,6 @@
   <li>AI 운동 트레이너가 24시간 대기하고 있습니다!</li>
   <li>오늘 어떤 운동을 할 지 고민하는 당신에게 AI 트레이너가 운동을 추천해줍니다! 한 번 시험해보세요!</li>
 </ul>
-![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/9661a735-ee52-45db-8f1c-e652305e1a47)
 <ol>
   <li>
     기능
@@ -25,7 +24,7 @@
     <ul>
       <li>
         대략적인 구상도<br>
-        ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e)
+        <img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e">
       </li>
       <li>
         <ul>
@@ -69,8 +68,7 @@
   </li>
   <li>
     프로젝트 이미지
-    ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd)
-
+    <img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd">
   </li>
 </ol>
 
