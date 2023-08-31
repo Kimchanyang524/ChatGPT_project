@@ -111,8 +111,7 @@
             .then(res => {
                 console.log(res)
                 let answer = res.choices[0].message.content + '';
-                answer.replace('\n', '<br>');
-                answer.replace('1.', '<br>1.');
+                answer = answer.replaceAll('\n', '<br>');
                 window.localStorage.setItem('chatgpt' + key, answer);
                 printgpt(key);
             })
