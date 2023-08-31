@@ -35,12 +35,11 @@
     const $reset = document.querySelector('.reset');
     const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
     const data = [];
-    let key = 0;
 
     $reset.addEventListener('click', function reset() {
         window.localStorage.clear();
         $chat_view.innerHTML = '';
-        key = 0;
+        var key = 0;
     });
 
     function printuser($key) {
@@ -85,8 +84,11 @@
     })
 
     $button.addEventListener('click', e => {
-        e.preventDefault()
+        e.preventDefault();
         const contents = $textarea.value
+        if (contents == '') {
+            return;
+        }
         data.push({
             "role": "user",
             "content": contents
@@ -111,8 +113,8 @@
             .then(res => {
                 console.log(res)
                 let answer = res.choices[0].message.content + '';
-                answer = answer.replaceAll('\n', '<br>');
-                window.localStorage.setItem('chatgpt' + key, answer);
+                answer2 = answer.replaceAll('\n', '<br>');
+                window.localStorage.setItem('chatgpt' + key, answer2);
                 printgpt(key);
             })
     }
