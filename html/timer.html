@@ -26,13 +26,75 @@
     <main>
         <div class="container">
             <div class="timer">
-                00h:00m:00s
+                <div class="hour">00h</div>
+                <div class="minute">00m</div>
+                <div class="second">00s</div>
             </div>
+            <button>시작</button>
         </div>
     </main>
     <footer>
         copyright 2023. All right reserved
     </footer>
 </body>
+
+<script>
+    const second = document.querySelector('.second');
+    const minute = document.querySelector('.minute');
+    const hour = document.querySelector('.hour');
+    const button = document.querySelector('button');
+
+    let toggle = null;
+
+    button.addEventListener('click', (e) => {
+        if (!toggle) {
+            let $time = [0, 59, 57];
+            countTimer($time);
+            console.log(toggle);
+        } else {
+            clearInterval(toggle);
+            console.log(toggle);
+        }
+    })
+
+    function countTimer($time) {
+        toggle = setInterval(() => {
+            $time[2]++;
+            $time = countMinute($time);
+            $time = countHour($time);
+            if ($time[0] < 10) {
+                hour.innerHTML = '0' + $time[0] + 'h';
+            } else {
+                hour.innerHTML = $time[0] + 'h';
+            }
+            if ($time[1] < 10) {
+                minute.innerHTML = '0' + $time[1] + 'm';
+            } else {
+                minute.innerHTML = $time[1] + 'm';
+            }
+            if ($time[2] < 10) {
+                second.innerHTML = '0' + $time[2] + 's';
+            } else {
+                second.innerHTML = $time[2] + 's';
+            }
+        }, 1000);
+    }
+
+    function countMinute($time) {
+        if ($time[2] >= 60) {
+            $time[1]++;
+            $time[2] -= 60;
+        }
+        return $time;
+    }
+
+    function countHour($time) {
+        if ($time[1] >= 60) {
+            $time[0]++;
+            $time[1] -= 60;
+        }
+        return $time;
+    }
+</script>
 
 </html>
