@@ -25,12 +25,26 @@
     </header>
     <main>
         <div class="container">
-            <div class="timer">
-                <div class="hour">00h</div>
-                <div class="minute">00m</div>
-                <div class="second">00s</div>
+            <div class="clockbase">
+                <div class="clock">
+                    <div class="hour">00h</div>
+                    <div class="minute">00m</div>
+                    <div class="second">00s</div>
+                </div>
+                <div class="stopWatch">
+                    <p>스톱워치</p>
+                    <button class="stopWatch-start">시작</button>
+                    <button class="stopWatch-stop">정지</button>
+                </div>
+                <div class="timer">
+                    <p>타이머</p>
+                    <button class="timer-start">시작</button>
+                    <button class="timer-stop">정지</button>
+                </div>
             </div>
-            <button>시작</button>
+            <div class="timeset">
+                <input type="number">
+            </div>
         </div>
     </main>
     <footer>
@@ -42,26 +56,22 @@
     const second = document.querySelector('.second');
     const minute = document.querySelector('.minute');
     const hour = document.querySelector('.hour');
-    const button = document.querySelector('button');
+    const stopWatchStart = document.querySelector('.stopWatch-start');
+    const stopWatchStop = document.querySelector('.stopWatch-stop');
+    const timerStart = document.querySelector('.timer-start');
+    const timerStop = document.querySelector('.timer-stop');
 
     let toggle = null;
 
-    button.addEventListener('click', (e) => {
-        if (!toggle) {
-            let $time = [0, 59, 57];
-            countTimer($time);
-            console.log(toggle);
-        } else {
-            clearInterval(toggle);
-            console.log(toggle);
-        }
-    })
+    let $time = [0, 0, 0];
 
-    function countTimer($time) {
+    //time add version
+
+    function countStopWatch($time) {
         toggle = setInterval(() => {
             $time[2]++;
-            $time = countMinute($time);
-            $time = countHour($time);
+            $time = stopWatchMinute($time);
+            $time = stopWatchHour($time);
             if ($time[0] < 10) {
                 hour.innerHTML = '0' + $time[0] + 'h';
             } else {
@@ -80,7 +90,7 @@
         }, 1000);
     }
 
-    function countMinute($time) {
+    function stopWatchMinute($time) {
         if ($time[2] >= 60) {
             $time[1]++;
             $time[2] -= 60;
@@ -88,13 +98,93 @@
         return $time;
     }
 
-    function countHour($time) {
+    function stopWatchHour($time) {
         if ($time[1] >= 60) {
             $time[0]++;
             $time[1] -= 60;
         }
         return $time;
     }
+
+    function startStopWatch() {
+        if (!toggle) {
+            countStopWatch($time);
+        }
+    }
+
+    function stopStopWatch() {
+        if (toggle) {
+            clearInterval(toggle);
+            toggle = null;
+        }
+    }
+
+    stopWatchStart.addEventListener('click', startStopWatch);
+
+    stopWatchStop.addEventListener('click', stopStopWatch);
+
+    //타이머
+
+    function countTimer($time) {
+        toggle = setInterval(() => {
+            $time[2]--;
+            $time = countMinute($time);
+            $time = countHour($time);
+
+            if ($time[0] < 10) {
+                hour.innerHTML = '0' + $time[0] + 'h';
+            } else {
+                hour.innerHTML = $time[0] + 'h';
+            }
+            if ($time[1] < 10) {
+                minute.innerHTML = '0' + $time[1] + 'm';
+            } else {
+                minute.innerHTML = $time[1] + 'm';
+            }
+            if ($time[2] < 10) {
+                second.innerHTML = '0' + $time[2] + 's';
+            } else {
+                second.innerHTML = $time[2] + 's';
+            }
+            if ($time[0] == 0 && $time[1] == 0 && $time[2] == 0) {
+                alert('타이머 완료');
+                stopTimer();
+            }
+        }, 1000);
+    }
+
+    function countMinute($time) {
+        if ($time[2] < 0) {
+            $time[1]--;
+            $time[2] += 60;
+        }
+        return $time;
+    }
+
+    function countHour($time) {
+        if ($time[1] < 0) {
+            $time[0]--;
+            $time[1] += 60;
+        }
+        return $time;
+    }
+
+    function startTimer() {
+        if (!toggle) {
+            countTimer($time);
+        }
+    }
+
+    function stopTimer() {
+        if (toggle) {
+            clearInterval(toggle);
+            toggle = null;
+        }
+    }
+
+    timerStart.addEventListener('click', startTimer);
+
+    timerStop.addEventListener('click', stopTimer);
 </script>
 
 </html>
