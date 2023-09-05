@@ -1,0 +1,22 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.question div {
+    display: flex;
+}
+
+.question div label {
+    width: 100px;
+}
+
+.answer {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    overflow: auto;
+}

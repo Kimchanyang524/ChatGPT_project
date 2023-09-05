@@ -13,20 +13,60 @@ $secondUp.addEventListener('click', secondUp);
 $secondDown.addEventListener('click', secondDown);
 
 function hourUp() {
-    $timer[0]++;
+    time[0]++;
+    time = upMinute(time);
+    time = upHour(time);
+    clockLoader(time);
 }
 function hourDown() {
-    $timer[0]--;
+    time[0]--;
+    time = downMinute(time);
+    time = downHour(time);
+    if (time[0] < 0) {
+        time[0]++;
+        time = upMinute(time);
+        time = upHour(time);
+        alert('시간은 0 아래로 내려갈 수 없습니다.');
+    } else {
+        clockLoader(time);
+    }
 }
 function minuteUp() {
-    $timer[1]++;
+    time[1]++;
+    time = upMinute(time);
+    time = upHour(time);
+    clockLoader(time);
 }
 function minuteDown() {
-    $timer[1]--;
+    time[1]--;
+    time = downMinute(time);
+    time = downHour(time);
+    if (time[0] < 0) {
+        time[1]++;
+        time = upMinute(time);
+        time = upHour(time);
+        alert('분은 0 아래로 내려갈 수 없습니다.');
+    } else {
+        clockLoader(time);
+    }
 }
 function secondUp() {
-    $timer[2]++;
+    time[2]++;
+    time = upMinute(time);
+    time = upHour(time);
+    clockLoader(time);
 }
 function secondDown() {
-    $timer[2]--;
+    time[2]--;
+    time = downMinute(time);
+    time = downHour(time);
+    if (time[0] < 0) {
+        console.log(time);
+        time[2]++;
+        time = upMinute(time);
+        time = upHour(time);
+        alert('초는 0 아래로 내려갈 수 없습니다.');
+    } else {
+        clockLoader(time);
+    }
 }

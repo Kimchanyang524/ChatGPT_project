@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>타이머</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/timer.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -14,12 +14,13 @@
     <header>
         <div class="dropdown">
             <div class="title">
-                <p>Timer</p>
+                <p>타이머</p>
                 <p>▼</p>
             </div>
             <div class="dropdown-content">
-                <a href="livechat.html">LiveChat</a>
-                <a href="index.html">Main</a>
+                <a href="planner.html">계획짜기</a>
+                <a href="livechat.html">챗봇</a>
+                <a href="index.html">메인화면</a>
             </div>
         </div>
         <p class="reset">초기화</p>
@@ -67,15 +68,8 @@
     </footer>
 </body>
 
-<script>
-    const $second = document.querySelector('.second');
-    const $minute = document.querySelector('.minute');
-    const $hour = document.querySelector('.hour');
-
-    let toggle = null;
-
-    let $time = [0, 0, 0];
-</script>
+<!-- 공용 스크립트 -->
+<script src="../javascript/timer.js"></script>
 <!-- 스톱워치 스크립트 -->
 <script src="../javascript/timer-stopwatch.js"></script>
 <!-- 타이머 스크립트 -->

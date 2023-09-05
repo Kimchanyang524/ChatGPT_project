@@ -30,6 +30,8 @@
     height: 25px;
 }
 
-.container div p {
-    width: 80px;
+.timeset div {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
 }
