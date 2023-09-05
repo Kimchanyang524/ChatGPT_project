@@ -17,7 +17,12 @@ function countTimer($time) {
 
 function startTimer() {
     if (!toggle) {
-        countTimer(time);
+        if (time[0] == 0 && time[1] == 0 && time[2] == 0) {
+            alert('타이머 완료');
+            stopTimer();
+        } else {
+            countTimer(time);
+        }
     }
 }
 
