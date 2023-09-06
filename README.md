@@ -12,29 +12,28 @@
 - Visual Studio Code와 확장 프로그램을 이용한 Javascript 코드
 ## 3.프로젝트 계획
 - 대략적인 구상도
-<img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e">
-### 3.1 1일차
+<img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e"></img>
+### 1일차
 - 기능 설계
 - 디자인 등 아이디어 연구
 - 기본적인 챗봇 기능 숙지
 - html을 이용해 페이지 얼추 만들어두기
 - css를 통한 화면 정리
-- 2일차
+### 2일차
 - html을 이용해 페이지 얼추 만들어두기
 - css를 통한 화면 정리
 - Javascript 기초작업
-- 3일차
+### 3일차
 - 본격적인 Javascript를 이용한 챗봇 불러오기
-- 4일차
+### 4일차
 - 페이지 전환 기능 추가를 통한 기능 확장
-- 5일차
+### 5일차
 - 타이머 기능 추가하기
-- 6일차
+### 6일차
 - 운동 서포트 기능 추가하기
-- 7일차
+### 7일차
 - 마무리 및 기능 추가
-    프로젝트 이미지
-    <img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd">
-  </li>
-</ol>
+### 프로젝트 이미지
+- 메인 화면
+<img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd"></img>
 
