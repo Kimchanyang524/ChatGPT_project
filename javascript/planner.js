@@ -18,7 +18,11 @@ const systemRequest = `user의 목표는${$goal.value}입니다.
                         운동 경험은 ${$exerciseExperience.value}입니다.
                         운동 장비는 ${$exerciseEquipment.value}입니다.
                         식단 여부는 ${$diet.value}입니다.
-                        user는 추가적인 질문을 할 수 없으므로, 한번에 완결된 결과를 제출해야합니다. `
+                        user는 추가적인 질문을 할 수 없으므로, 한번에 완결된 결과를 제출해야합니다. `;
+
+if (local.getItem('plan')) {
+    $answer.innerHTML = local.getItem('plan');
+}
 
 data.push({
     "role": "system",
@@ -66,6 +70,7 @@ function chatGPTAPI() {
             console.log(res);
             let answer = res.choices[0].message.content + '';
             answer = answer.replaceAll('\n', '<br>');
+            local.setItem('plan', answer);
             $answer.innerHTML = answer;
         })
 }
