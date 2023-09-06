@@ -2,7 +2,6 @@ const $second = document.querySelector('.second');
 const $minute = document.querySelector('.minute');
 const $hour = document.querySelector('.hour');
 const $reset = document.querySelector('.reset');
-const alarm = new Audio('../audio/alarm.mp3');
 
 let toggle = null;
 

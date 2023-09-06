@@ -1,6 +1,8 @@
 
 const $timerStart = document.querySelector('.timer-start');
 const $timerStop = document.querySelector('.timer-stop');
+const audio = new Audio('../audio/alarm.mp3');
+const audioBreak = document.querySelector('audioBreak');
 
 function countTimer($time) {
     toggle = setInterval(() => {
@@ -9,16 +11,26 @@ function countTimer($time) {
         $time = downHour($time);
         clockLoader($time);
         if ($time[0] == 0 && $time[1] == 0 && $time[2] == 0) {
-            alert('타이머 완료');
+            audio.play();
+            if (!alert('타이머 완료')) {
+                audio.pause();
+            }
             stopTimer();
         }
     }, 1000);
 }
 
+// audioBreak.addEventListener('click', e => {
+//     audio.pause();
+// })
+
 function startTimer() {
     if (!toggle) {
         if (time[0] == 0 && time[1] == 0 && time[2] == 0) {
-            alert('타이머 완료');
+            audio.play();
+            if (!alert('타이머 완료')) {
+                audio.pause();
+            }
             stopTimer();
         } else {
             countTimer(time);
