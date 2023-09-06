@@ -42,13 +42,14 @@
 ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a080af0d-57ec-41fa-b8e5-074b20bfdec8)
 - 계획 짜기
 
-![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/736e782e-2045-4902-8496-e9fc866a7d3b)
+![Planner](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/ca182737-85ff-42a5-a6da-0e76f87e8401)
 - 타이머
 
-![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/8bf1659a-504a-41eb-a59a-db197743b993)
+![Timer](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/1d753ddf-03a1-4d8e-9ff6-d396e9a0b294)
+
 - 챗봇
 
-![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/81e708be-434a-4400-a5dc-3bbe3c021b64)
+![LiveChat](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/4ae46ccc-0bb9-434b-9761-d935cc5aa27f)
 
 ## 5. 기능
 - 사용자의 정보를 받아, 챗 GPT에게 넘기고 결과를 받아 출력하는 기능
