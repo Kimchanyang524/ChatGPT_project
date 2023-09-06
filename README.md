@@ -12,6 +12,7 @@
 - Visual Studio Code와 확장 프로그램을 이용한 Javascript 코드
 ## 3.프로젝트 계획
 - 대략적인 구상도
+
   
 <img style="width: 500px;" src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e"></img>
 
