@@ -12,7 +12,8 @@
 - Visual Studio Code와 확장 프로그램을 이용한 Javascript 코드
 ## 3.프로젝트 계획
 - 대략적인 구상도
-<img style="width: 200px;" src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e"></img>
+  
+<img style="width: 500px;" src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e"></img>
 
 ### 1일차
 - 기능 설계
@@ -34,8 +35,24 @@
 - 운동 서포트 기능 추가하기
 ### 7일차
 - 마무리 및 기능 추가
-### 프로젝트 이미지
+## 4. UI/BM
 - 메인 화면
+  
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a080af0d-57ec-41fa-b8e5-074b20bfdec8)
+- 계획 짜기
 
-<img src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/2a636ad2-6a5a-42b7-90eb-ddd996bbdecd"></img>
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/736e782e-2045-4902-8496-e9fc866a7d3b)
+- 타이머
+
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/8bf1659a-504a-41eb-a59a-db197743b993)
+- 챗봇
+
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/81e708be-434a-4400-a5dc-3bbe3c021b64)
+
+## 5. 기능
+- 사용자의 정보를 받아, 챗 GPT에게 넘기고 결과를 받아 출력하는 기능
+- 기본적으로 챗봇이기도 하고, 내가 원하는 정보를 넣기 힘들 수 있기떄문에 채팅방 형식으로 원하는 질문을 자유롭게 하도록 되어있다.
+- 운동 할 때 알람 기능이 있으면 좋을 것 같아, 알람과 타이머 기능을 넣었다.
+## 6. 느낀 점
+- 첫 개인 프로젝트를 하면서 코드가 길어지면서 늘어지는 파일 정리하는 법이나, 함수를 이용한 기능 압축하는법을 익혔고, 이 프로그램에 무엇이 필요할지에 대한 고민을 상당히 많이 하면서 떠오른 기능을 구현하기 위해 여러가지 공부하면서 새로운 지식을 얻을 수 있었다.
 
