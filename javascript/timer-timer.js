@@ -2,7 +2,6 @@
 const $timerStart = document.querySelector('.timer-start');
 const $timerStop = document.querySelector('.timer-stop');
 const audio = new Audio('../audio/alarm.mp3');
-const audioBreak = document.querySelector('audioBreak');
 
 function countTimer($time) {
     toggle = setInterval(() => {
@@ -19,10 +18,6 @@ function countTimer($time) {
         }
     }, 1000);
 }
-
-// audioBreak.addEventListener('click', e => {
-//     audio.pause();
-// })
 
 function startTimer() {
     if (!toggle) {

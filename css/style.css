@@ -1,6 +1,16 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'HakgyoansimGaeulsopungB';
+    font-size: 20px;
+    line-height: 25px;
+}
+
+@font-face {
+    font-family: 'HakgyoansimGaeulsopungB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimGaeulsopungB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 
 a {
@@ -14,19 +24,20 @@ body {
     width: 380px;
     height: 600px;
     margin: auto;
-    margin-top: 120px;
 }
 
 header {
     top: 0px;
     height: 60px;
     line-height: 60px;
+    font-size: 30px;
     background-color: lightblue;
-    padding: 0 20px;
+    padding: 0px 20px;
     display: flex;
     justify-content: space-between;
     justify-self: flex-start;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
+    align-items: center;
 }
 
 header p {
@@ -38,10 +49,12 @@ header .title {
     font-weight: bold;
     cursor: pointer;
     width: 140px;
+    height: 40px;
     text-align: center;
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
+    align-items: center;
 }
 
 .dropdown {
@@ -68,12 +81,16 @@ header .title {
 }
 
 .dropdown:hover .dropdown-content {
-    border-top: 1px solid black;
     display: block;
+    border: 1px solid black;
+}
+
+.dropdown:hover .dropdown-content a {
+    border-top: 1px solid black;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
 }
 
 footer {
@@ -95,6 +112,6 @@ main {
 .container {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 480px;
     padding: 20px;
 }
