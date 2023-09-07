@@ -11,7 +11,7 @@
 ## 2.개발 환경
 - Visual Studio Code와 확장 프로그램을 이용한 Javascript 코드
 ## 3.프로젝트 계획
-- 대략적인 구상도
+- 프로젝트 구조
 
 ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/5547e5f4-d46e-4d9c-8c14-f2dff1b355e6)
 
