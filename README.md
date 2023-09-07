@@ -13,8 +13,7 @@
 ## 3.프로젝트 계획
 - 대략적인 구상도
 
-  
-<img style="width: 500px;" src="https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a28b2ed6-b843-4722-bb0c-69e5319b1c7e"></img>
+![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/5547e5f4-d46e-4d9c-8c14-f2dff1b355e6)
 
 ### 1일차
 - 기능 설계
