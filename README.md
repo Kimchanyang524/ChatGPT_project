@@ -38,7 +38,7 @@
 ### 7일차
 - 마무리 및 기능 추가
 
-## 4. UI/BM
+## 4. UI
 - 메인 화면
   
 ![image](https://github.com/Kimchanyang524/ChatGPT_project/assets/105031421/a080af0d-57ec-41fa-b8e5-074b20bfdec8)
