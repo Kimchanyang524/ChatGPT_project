@@ -19,3 +19,8 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+.dropdown div,
+.reset {
+    cursor: default;
+}
