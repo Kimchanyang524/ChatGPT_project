@@ -40,7 +40,6 @@ header {
     justify-self: flex-start;
     border-bottom: 2px solid black;
     align-items: center;
-    z-index: -1;
 }
 
 header p {
