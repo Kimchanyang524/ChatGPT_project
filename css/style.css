@@ -25,7 +25,7 @@ body {
     height: 600px;
     margin: auto;
     border: 5px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 header {
@@ -40,6 +40,8 @@ header {
     justify-self: flex-start;
     border-bottom: 2px solid black;
     align-items: center;
+    border-start-start-radius: 6px;
+    border-start-end-radius: 6px;
 }
 
 header p {
@@ -104,8 +106,8 @@ footer {
     justify-self: flex-end;
     color: white;
     z-index: -1;
-    border-end-start-radius: 10px;
-    border-end-end-radius: 10px;
+    border-end-start-radius: 6px;
+    border-end-end-radius: 6px;
 }
 
 main {
