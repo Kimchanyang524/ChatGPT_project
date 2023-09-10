@@ -17,7 +17,7 @@ $reset.addEventListener('click', function reset() {
 
 function printuser($key) {
     const $user = document.createElement('div');
-    $user.className = 'user';
+    $user.className = 'user user' + $key;
     $user.innerHTML = local.getItem('user' + $key);
     if (local.getItem('chatgpt') != '') {
         $chat_view.appendChild($user);
@@ -26,24 +26,22 @@ function printuser($key) {
 }
 
 function printgpt($key) {
-    const $chatgpt = document.createElement('div');
-    $chatgpt.className = 'chatgpt';
+    const $chatgpt = document.querySelector('.chatgpt' + $key);
     $chatgpt.innerHTML = local.getItem('chatgpt' + $key);
-    if (local.getItem('chatgpt') != '') {
-        $chat_view.appendChild($chatgpt);
-    }
     $chat_view.scrollTop = $chat_view.scrollHeight;
+    $textarea.disabled = false;
 }
 
 function printAll(params) {
     let i = 0;
-    while (i <= 100) {
+    while (true) {
         if (local.getItem('user' + i) == null) {
             break;
         }
         printuser(i);
-        i++;
+        buffering(i);
         printgpt(i);
+        i++;
     }
 }
 printAll();
@@ -66,9 +64,8 @@ $button.addEventListener('click', e => {
     local.setItem('user' + key, contents);
     $textarea.value = '';
     printuser(key);
+    buffering(key);
     chatGPTAPI();
-    key++;
-    local.setItem('key', key);
 })
 
 function chatGPTAPI() {
@@ -86,5 +83,16 @@ function chatGPTAPI() {
             answer = answer.replaceAll('\n', '<br>');
             window.localStorage.setItem('chatgpt' + key, answer);
             printgpt(key);
+            key++;
+            local.setItem('key', key);
         })
+}
+
+function buffering($key) {
+    const $chatgpt = document.createElement('div');
+    $chatgpt.className = 'chatgpt chatgpt' + $key;
+    $chatgpt.innerHTML = '답변이 작성중입니다. 잠시만 기다려주세요.';
+    $textarea.disabled = true;
+    $chat_view.appendChild($chatgpt);
+    $chat_view.scrollTop = $chat_view.scrollHeight;
 }
